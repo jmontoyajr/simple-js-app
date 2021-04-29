@@ -4,3 +4,7 @@ let pokemonList = [
     {name: "Charizard", height: 1.7, type: ["fire", "flying"]},
     {name: "Pikachu", height: 0.4, type: ["electric"]},
 ];
+
+for (let i = 0; i < pokemonList.length; i++) {
+  document.write(i)
+}
