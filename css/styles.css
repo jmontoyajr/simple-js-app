@@ -9,7 +9,7 @@ div {
 }
 
 a {
-  color: var(--primary-color);
+  color: black;
 }
 
 a:visited {
