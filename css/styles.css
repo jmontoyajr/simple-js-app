@@ -1,5 +1,83 @@
+/*
+Colors used:
+
+Background color (White): #FFFFFF;
+Primary color (DarkSlateGrey): #2F4F4F;
+Secondary color (DimGrey): #696969;
+*/
+:root {
+  --primary-color: #357B70;
+  --secondary-color: #e0b354;
+  --dark-grey: #2b2b2b;
+  --background-color: #2f4f4f;
+  --h1-color: #0d2e4e;
+  --h2-color: #ef6523;
+  --visited-color: #0000cd;
+  --active-color: #05676e;
+  --button-background: #357b70;
+  --button-two-color: #e0b354;
+  --button-two-font: #2b2b2b;
+  --fill-zero: #edc655;
+  --fill-fifty: #fcffad;
+  --fill-hundred: #f76414;
+  --font-weight-body: 400;
+  --font-size-body: 16pt;
+  --font-weight-h1: 700;
+  --font-size-h1: 30px;
+  --font-weight-h2: 700;
+  --font-size-h2: 24px;
+  --font-weight-h3: 700;
+  --font-size-h3: 18px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6; /* sets line height to 1.6 */
+}
+
+div {
+  padding: 15px;
+}
+
+a {
+  color: var(--primary-color);
+}
+
+a:visited {
+  /* visited link */
+  color: var(--visited-color);
+}
+
+a:hover,
+a:focus {
+  text-decoration: none; /* no underlining when hovering over a link */
+}
+
+a:active {
+  color: var(--actived-color); /* selected link */
+}
+
 /* main section of homepage */
 .pokemon {
   max-width: 700px;
   margin: 0 auto;
+}
+
+.move {
+  bottom: 15%;
+  position: absolute;
+  -webkit-animation: linear infinite;
+  -webkit-animation-name: run;
+  -webkit-animation-duration: 5s;
+}
+@-webkit-keyframes run {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
 }
