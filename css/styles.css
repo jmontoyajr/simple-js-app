@@ -63,6 +63,15 @@ a:active {
   margin: 0 auto;
 }
 
+/* adding flex box to webpage */
+.flex {
+  display: flex;
+  width: 700px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* move Charizard image from left to right */
 .move {
   bottom: 15%;
   position: absolute;
