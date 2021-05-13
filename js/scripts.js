@@ -1,24 +1,47 @@
 
-// Creates array with list of pokemons
-let pokemonList = [
-  {
-    name: 'Bulbasaur',
-    height: 0.7,
-    type: ['grass', 'poison']
-  },
-  {
-    name: 'Charizard',
-    height: 1.7,
-    type: ['fire', 'flying']
-  },
-  {
-    name: 'Pikachu',
-    height: 0.4,
-    type: ['electric']
-  }
-];
+// Creates pokemonRepository assigned to IIEF
+let pokemonRepository = (function () {
+  // Creates new pokemon Array
+  let pokemonList = [
+    {
+      name: "Bulbasaur",
+      height: 0.7,
+      type: ["grass", "poison"]
+    },
+    {
+      name: "Charizard",
+      height: 1.7,
+      type: ["fire", "flying"]
+    },
+    {
+      name: "Pikachu",
+      height: 0.4,
+      type: ["electric"]
+    }
+  ];
 
-// Creates forEach Loop that passes pokemon function for each element in the array
+  // Creates getAll funtction to call the pokemonList
+  function getAll() {
+    return pokemonList;
+  }
+
+  //Creates add function to add additional pokemon to the pokemonList
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+
+  // Returns values of the getAll and add functions
+  return {
+    getAll: getAll,
+    add: add
+  };
+})();
+
+// Writes array to the pokemon webpage
+document.write(pokemonRepository.getAll());
+
+
+// Creates forEach Loop that passes pokemon function for each element in the array === NEW!!
 pokemonList.forEach(function(pokemon) {
   document.write(pokemon.name + ' is ' + pokemon.height + ' m tall <br><br>');
 });
