@@ -1,5 +1,5 @@
 
-// Creates pokemonRepository assigned to IIEF
+// Creates pokemonRepository assigned to IIFE
 let pokemonRepository = (function () {
   // Creates new pokemon Array
   let pokemonList = [
