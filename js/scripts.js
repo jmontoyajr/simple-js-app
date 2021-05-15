@@ -20,6 +20,7 @@ let pokemonRepository = (function () {
     }
   ];
 
+
   // Creates getAll funtction to call the pokemonList
   function getAll() {
     return pokemonList;
@@ -34,16 +35,13 @@ let pokemonRepository = (function () {
   return {
     getAll: getAll,
     add: add
+
   };
+
 })();
 
-// Writes array to the pokemon webpage
-document.write(pokemonRepository.getAll());
-
-
-// Creates forEach Loop that passes pokemon function for each element in the array === NEW!!
-pokemonList.forEach(function(pokemon) {
-  document.write(pokemon.name + ' is ' + pokemon.height + ' m tall <br><br>');
+pokemonRepository.forEach(function(getAll) {
+  document.write(pokemonList.name + ' is ' + pokemonList.height + ' m tall ' + ' and uses ' + pokemonList.type);
 });
 
 
