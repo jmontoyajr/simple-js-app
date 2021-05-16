@@ -1,8 +1,8 @@
 
 // Creates pokemonRepository assigned to IIFE
-let pokemonRepository = (function () {
+var pokemonRepository = (function () {
   // Creates new pokemon Array
-  let pokemonList = [
+  var pokemonList = [
     {
       name: "Bulbasaur",
       height: 0.7,
@@ -40,9 +40,16 @@ let pokemonRepository = (function () {
 
 })();
 
+Object.keys(pokemonRepository).forEach(function(pokemonList) {
+  document.write(pokemonRepository[pokemonList]);
+  console.log(pokemonRepository.getAll());
+});
+
+/*
 pokemonRepository.forEach(function(getAll) {
   document.write(pokemonList.name + ' is ' + pokemonList.height + ' m tall ' + ' and uses ' + pokemonList.type);
 });
+*/
 
 
 /* Pokemon Array ORIGINAL CODE for reference
