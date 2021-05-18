@@ -40,12 +40,29 @@ var pokemonRepository = (function () {
 
 })();
 
+pokemonRepository.getAll().forEach(function(pokemon) {
+  if (pokemon.height > 1) {
+    document.write(pokemon.name + " (height:) " + pokemon.height + "<strong>. Wow, that's big! </strong><br><br>");
+  } else {
+    document.write(pokemon.name + " (height:) " +  pokemon.height + "<i>, is small. </i><br><br>")
+  }
+  console.log(pokemonRepository.getAll()); // []
+  pokemonRepository.add({ name: "Sandslash" });
+  pokemonRepository.add({ height: 1 });
+  pokemonRepository.add({ type: ["Ground"] });
+})
+
+// OLD CODE FOR REFERENCE
+/* Object key approach
+
 Object.keys(pokemonRepository).forEach(function(pokemonList) {
   document.write(pokemonRepository[pokemonList]);
   console.log(pokemonRepository.getAll());
 });
 
-/*
+*/
+
+/* Initial forEach coding approach
 pokemonRepository.forEach(function(getAll) {
   document.write(pokemonList.name + ' is ' + pokemonList.height + ' m tall ' + ' and uses ' + pokemonList.type);
 });
