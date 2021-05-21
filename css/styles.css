@@ -41,13 +41,17 @@ a:active {
   cursor: pointer;
   background-color: #FF2D00; /* ORANGE */
   color: white;
-  border: 2px solid #4caf50;
+  border: 2px solid #FFF;
 }
 
 /* main section of homepage */
 .pokemon {
   max-width: 750px;
   margin: 0 auto;
+}
+
+.title {
+  text-align: center;
 }
 
 /* adding flex box to webpage */
@@ -62,14 +66,14 @@ a:active {
 .grid {
   display: grid;
   grid-template-columns: 300px 300px 300px;
-  grid-template-rows: 300px 300px;
+  grid-template-rows: 600px 600px;
 }
 
 /* start grid fallback */
 .grid__item {
   display: inline-block;
   width: 100%;
-  padding: 10px;
+  padding: 20px;
 }
 
 /* grid-template-columns: 300px 300px 300px; fractions are better than pixels - they are responsive */
@@ -109,11 +113,11 @@ a:active {
 
 /* move Charizard image from left to right */
 .move {
-  bottom: 15%;
+  bottom: 7%;
   position: absolute;
   -webkit-animation: linear infinite;
   -webkit-animation-name: run;
-  -webkit-animation-duration: 5s;
+  -webkit-animation-duration: 3s;
 }
 @-webkit-keyframes run {
   0% {
