@@ -20,26 +20,57 @@ var pokemonRepository = (function () {
     }
   ];
 
+  /* Creates function to add pokemon object */
+  function add(pokemon) {
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon &&
+      "height" in pokemon &&
+      "type" in pokemon
+    ) {
+      pokemonList.push(pokemon);
+    } else {
+      console.log("Pokemon is not correct");
+    }
+  }
 
-  // Creates getAll funtction to call the pokemonList
+  /* Creates getAll function to return the pokemonList */
   function getAll() {
     return pokemonList;
   }
 
-  //Creates add function to add additional pokemon to the pokemonList
-  function add(pokemon) {
-    pokemonList.push(pokemon);
+  /* Creates addListItem function to pull data from the html elements */
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector
+    (".pokemon-list");
+    let listPokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listPokemon.appendChild(button);
+    pokemonList.appendChild(listPokemon);
   }
 
-  // Returns values of the getAll and add functions
+  /* Returns add, getAll and addListItem objects */
   return {
+    add: add,
     getAll: getAll,
-    add: add
-
+    addListItem: addListItem
   };
-
 })();
 
+/* Adds pokemon to repository */
+pokemonRepository.add({ name: "Sandslash", height: 1, type: ["Ground"] });
+
+console.log(pokemonRepository.getAll());
+
+pokemonRepository.getAll().forEach(function(pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
+
+/*
+
+//Use getAll function to pull data for each pokemon in the array; prints onto webpage
 pokemonRepository.getAll().forEach(function(pokemon) {
   if (pokemon.height > 1) {
     document.write(pokemon.name + " (height:) " + pokemon.height + "<strong>. Wow, that's big! </strong><br><br>");
@@ -50,4 +81,10 @@ pokemonRepository.getAll().forEach(function(pokemon) {
   pokemonRepository.add({ name: "Sandslash" });
   pokemonRepository.add({ height: 1 });
   pokemonRepository.add({ type: ["Ground"] });
+  document.querySelector('.pokemon-list');
+  let listItem = document.createElement('li');
+  let button = document.createElement('button');
+
 })
+
+*/
