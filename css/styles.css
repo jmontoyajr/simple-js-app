@@ -66,7 +66,7 @@ a:active {
 .grid {
   display: grid;
   grid-template-columns: 300px 300px 300px;
-  grid-template-rows: 600px 600px;
+  grid-template-rows: 500px 500px;
 }
 
 /* start grid fallback */
@@ -113,8 +113,8 @@ a:active {
 
 /* move Charizard image from left to right */
 .move {
-  bottom: 7%;
-  position: absolute;
+  bottom: 10%;
+  position: relative;
   -webkit-animation: linear infinite;
   -webkit-animation-name: run;
   -webkit-animation-duration: 5s;
