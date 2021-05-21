@@ -117,7 +117,7 @@ a:active {
   position: absolute;
   -webkit-animation: linear infinite;
   -webkit-animation-name: run;
-  -webkit-animation-duration: 3s;
+  -webkit-animation-duration: 5s;
 }
 @-webkit-keyframes run {
   0% {
