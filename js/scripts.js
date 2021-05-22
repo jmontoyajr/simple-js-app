@@ -47,8 +47,14 @@ var pokemonRepository = (function () {
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add("button-class");
+    button.addEventListener('click', showDetails);
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
+  }
+
+  /* Shows pokemon object details in console */
+  function showDetails(pokemon) {
+    console.log(pokemon);
   }
 
   /* Returns add, getAll and addListItem objects */
@@ -67,24 +73,3 @@ console.log(pokemonRepository.getAll());
 pokemonRepository.getAll().forEach(function(pokemon) {
   pokemonRepository.addListItem(pokemon);
 });
-
-/*
-
-//Use getAll function to pull data for each pokemon in the array; prints onto webpage
-pokemonRepository.getAll().forEach(function(pokemon) {
-  if (pokemon.height > 1) {
-    document.write(pokemon.name + " (height:) " + pokemon.height + "<strong>. Wow, that's big! </strong><br><br>");
-  } else {
-    document.write(pokemon.name + " (height:) " +  pokemon.height + "<i>, is small. </i><br><br>")
-  }
-  console.log(pokemonRepository.getAll()); // []
-  pokemonRepository.add({ name: "Sandslash" });
-  pokemonRepository.add({ height: 1 });
-  pokemonRepository.add({ type: ["Ground"] });
-  document.querySelector('.pokemon-list');
-  let listItem = document.createElement('li');
-  let button = document.createElement('button');
-
-})
-
-*/
