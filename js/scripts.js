@@ -1,32 +1,16 @@
 
 // Creates pokemonRepository assigned to IIFE
-var pokemonRepository = (function () {
+let pokemonRepository = (function () {
   // Creates new pokemon Array
-  var pokemonList = [
-    {
-      name: "Bulbasaur",
-      height: 0.7,
-      type: ["grass", "poison"]
-    },
-    {
-      name: "Charizard",
-      height: 1.7,
-      type: ["fire", "flying"]
-    },
-    {
-      name: "Pikachu",
-      height: 0.4,
-      type: ["electric"]
-    }
-  ];
+  let pokemonList = [];
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
   /* Creates function to add pokemon object */
   function add(pokemon) {
     if (
       typeof pokemon === "object" &&
       "name" in pokemon &&
-      "height" in pokemon &&
-      "type" in pokemon
+      "detailsUrl" in pokemon
     ) {
       pokemonList.push(pokemon);
     } else {
@@ -47,29 +31,67 @@ var pokemonRepository = (function () {
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     button.classList.add("button-class");
-    button.addEventListener('click', showDetails);
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
+    button.addEventListener('click', function(event) {
+      showDetails(pokemon);
+    });
   }
+
+  /* Load list from pokemon API */
+  function loadList() {
+    return fetch(apiUrl).then(function(response) {
+      return response.json();
+    }).then(function (json) {
+      json.results.forEach(function (item) {
+        let pokemon = {
+          name: item.name,
+          detailsUrl: item.url
+        };
+        add (pokemon);
+        console.log(pokemon);
+      });
+    }).catch(function (e) {
+      console.error(e);
+    })
+  }
+
+  /* Load details from pokemon API */
+  function loadDetails(item) {
+    let url = item.detailsUrl;
+    let name = item.name;
+    return fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (details) {
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = details.types;
+    }).catch(function(e) {
+      console.error(e);
+    });
+  }
+
 
   /* Shows pokemon object details in console */
   function showDetails(pokemon) {
-    console.log(pokemon);
+    pokemonRepository.loadDetails(pokemon).then(function () {
+      console.log(pokemon);
+    });
   }
 
-  /* Returns add, getAll and addListItem objects */
+  /* Returns inputs from each function */
   return {
     add: add,
     getAll: getAll,
-    addListItem: addListItem
+    addListItem: addListItem,
+    loadList: loadList,
+    loadDetails: loadDetails,
+    showDetails: showDetails
   };
 })();
 
-/* Adds pokemon to repository */
-pokemonRepository.add({ name: "Sandslash", height: 1, type: ["Ground"] });
-
-console.log(pokemonRepository.getAll());
-
-pokemonRepository.getAll().forEach(function(pokemon) {
-  pokemonRepository.addListItem(pokemon);
+pokemonRepository.loadList().then(function() {
+  pokemonRepository.getAll().forEach(function(pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
 });
