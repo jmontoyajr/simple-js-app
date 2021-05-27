@@ -168,23 +168,3 @@ a:active {
       grid-column: auto / auto;
       grid-row: auto / auto;
     }
-
-/* move Charizard image from left to right */
-.move {
-  bottom: 10%;
-  position: relative;
-  -webkit-animation: linear infinite;
-  -webkit-animation-name: run;
-  -webkit-animation-duration: 5s;
-}
-@-webkit-keyframes run {
-  0% {
-    left: 0;
-  }
-  50% {
-    left: 100%;
-  }
-  100% {
-    left: 0;
-  }
-}
