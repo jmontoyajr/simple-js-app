@@ -59,7 +59,7 @@ let pokemonRepository = (function () {
   /* Displays the modal when user clicks on the 'Show Modal' button */
   document.querySelector('#show-modal').addEventListener
   ('click', () => {
-    showModal('Modal title', 'This is the Modal content');
+    showModal('Pokemon Characters', 'This is the Modal content');
   });
 
   /* Creates function to add pokemon object */
