@@ -57,7 +57,6 @@ a:active {
 /* adding flex box to webpage */
 .grid {
   display: grid;
-  text-align: center;
 }
 
 .grid__item {
