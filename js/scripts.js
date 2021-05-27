@@ -4,6 +4,63 @@ let pokemonRepository = (function () {
   // Creates new pokemon Array
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
+  let modalContainer = document.querySelector('#modal-container');
+
+  /* Creates Show Modal function */
+  function showModal(title, text) {
+    modalContainer.innerHTML = '';
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    /* Creates close modal functionality */
+    let closeButtonElement = document.createElement('button');
+    closeButtonElement.classList.add('modal-close');
+    closeButtonElement.innerText = 'Close';
+    closeButtonElement.addEventListener('click', hideModal);
+
+    /* Creates title element in modal */
+    let titleElement = document.createElement('h1');
+    titleElement.innerText = title;
+
+    /* Creates body elements in modal */
+    let contentElement = document.createElement('p');
+    contentElement.innerText = text;
+
+    /* Calls modal elements */
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(titleElement);
+    modal.appendChild(contentElement);
+    modalContainer.appendChild(modal);
+
+    modalContainer.classList.add('is-visible');
+  }
+
+  /* Creates hide modal function */
+  function hideModal() {
+    modalContainer.classList.remove('is-visible');
+  }
+
+  /* Adds event listener to look for keydown or use of Esc key) */
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' &&
+    modalContainer.classList.contains('is-visible')) {
+      hideModal();
+    }
+  });
+
+  /* Hides modal if user clicks directly on the overlay */
+  modalContainer.addEventListener('click', (e) => {
+    let target = e.target;
+    if (target === modalContainer) {
+      hideModal();
+    }
+  });
+
+  /* Displays the modal when user clicks on the 'Show Modal' button */
+  document.querySelector('#show-modal').addEventListener
+  ('click', () => {
+    showModal('Modal title', 'This is the Modal content');
+  });
 
   /* Creates function to add pokemon object */
   function add(pokemon) {
