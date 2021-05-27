@@ -134,6 +134,12 @@ a:active {
   display: block;
 }
 
+#image-container {
+  position: fixed;
+  padding: 20px;
+  float: right;
+}
+
 /* grid-template-columns: 300px 300px 300px; fractions are better than pixels - they are responsive */
 
 @supports (display: grid) {
