@@ -59,7 +59,7 @@ let pokemonRepository = (function () {
   /* Displays the modal when user clicks on the 'Show Modal' button */
   document.querySelector('#show-modal').addEventListener
   ('click', () => {
-    showModal('Pokemon Characters', 'This is the Modal content');
+    showModal('Pokemon Characters', 'Click on a button to learn more!');
   });
 
   /* Creates function to add pokemon object */
@@ -67,7 +67,8 @@ let pokemonRepository = (function () {
     if (
       typeof pokemon === "object" &&
       "name" in pokemon &&
-      "detailsUrl" in pokemon
+      "detailsUrl" in pokemon &&
+      "height" in pokemon
     ) {
       pokemonList.push(pokemon);
     } else {
@@ -103,7 +104,8 @@ let pokemonRepository = (function () {
       json.results.forEach(function (item) {
         let pokemon = {
           name: item.name,
-          detailsUrl: item.url
+          detailsUrl: item.url,
+          height: item.height
         };
         add (pokemon);
         console.log(pokemon);
@@ -132,6 +134,7 @@ let pokemonRepository = (function () {
   /* Shows pokemon object details in console */
   function showDetails(pokemon) {
     pokemonRepository.loadDetails(pokemon).then(function () {
+      showModal(pokemon);
       console.log(pokemon);
     });
   }
