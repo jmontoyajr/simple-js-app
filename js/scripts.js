@@ -24,19 +24,17 @@ let pokemonRepository = (function () {
     let contentElement = document.createElement('p');
     contentElement.innerText = pokemon.height;
 
-    // /* Creates title element in modal */
-    // let titleElement = document.createElement('h1');
-    // titleElement.innerText = title;
-    //
-    // /* Creates body elements in modal */
-    // let contentElement = document.createElement('p');
-    // contentElement.innerText = text;
+    let container = document.querySelector('#image-container');
+    let myImage = document.createElement('img');
+    myImage.src = pokemon.imageUrl;
 
     /* Calls modal elements */
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
+    modal.appendChild(myImage);
     modalContainer.appendChild(modal);
+
 
     modalContainer.classList.add('is-visible');
   }
@@ -60,12 +58,6 @@ let pokemonRepository = (function () {
     if (target === modalContainer) {
       hideModal();
     }
-  });
-
-  /* Displays the modal when user clicks on the 'Show Modal' button */
-  document.querySelector('#show-modal').addEventListener
-  ('click', () => {
-    showModal('Pokemon Characters', 'Click on a button to learn more!');
   });
 
   /* Creates function to add pokemon object */
