@@ -7,7 +7,7 @@ let pokemonRepository = (function () {
   let modalContainer = document.querySelector('#modal-container');
 
   /* Creates Show Modal function */
-  function showModal(title, text) {
+  function showModal(pokemon) {
     modalContainer.innerHTML = '';
     let modal = document.createElement('div');
     modal.classList.add('modal');
@@ -18,13 +18,19 @@ let pokemonRepository = (function () {
     closeButtonElement.innerText = 'Close';
     closeButtonElement.addEventListener('click', hideModal);
 
-    /* Creates title element in modal */
     let titleElement = document.createElement('h1');
-    titleElement.innerText = title;
+    titleElement.innerText = pokemon.name;
 
-    /* Creates body elements in modal */
     let contentElement = document.createElement('p');
-    contentElement.innerText = text;
+    contentElement.innerText = pokemon.height;
+
+    // /* Creates title element in modal */
+    // let titleElement = document.createElement('h1');
+    // titleElement.innerText = title;
+    //
+    // /* Creates body elements in modal */
+    // let contentElement = document.createElement('p');
+    // contentElement.innerText = text;
 
     /* Calls modal elements */
     modal.appendChild(closeButtonElement);
@@ -129,7 +135,6 @@ let pokemonRepository = (function () {
       console.error(e);
     });
   }
-
 
   /* Shows pokemon object details in console */
   function showDetails(pokemon) {
