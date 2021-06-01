@@ -21,7 +21,7 @@ let pokemonRepository = (function () {
     let titleElement = document.createElement('h1');
     titleElement.innerText = pokemon.name;
 
-    let contentElement = document.createElement('p');
+    let contentElement = document.createElement('h2');
     contentElement.innerText = pokemon.height;
 
     let container = document.querySelector('#image-container');
