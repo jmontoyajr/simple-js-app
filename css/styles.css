@@ -76,6 +76,11 @@ a:active {
   padding: 20px;
 }
 
+.page-container {
+  margin-top: 60px;
+
+}
+
 #modal-container {
   position: fixed;
   padding: 20px;
