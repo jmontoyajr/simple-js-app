@@ -44,21 +44,28 @@
       </header>
 
         <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="pokemon-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
+
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Pokemon</h5>
+                <h5 class="modal-title"></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+
               <div class="modal-body">
-                ...
+                <div class="row modal__row">
+                  <div class="col__left col-md-8 p-2">
+                  </div>
+                  <div class="col__right col-md-4 ml-auto p-2">
+                  </div>
+                </div>
               </div>
+
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
               </div>
             </div>
           </div>
@@ -72,13 +79,13 @@
                   <img src="img/pokemon.png" width="200" alt="Pokemon Logo">
                   <h1 class="text-center">List</h1>
                     <ul class="pokemon-list list-group list-unstyled"></ul>
-                      <li class="list-group-item" >
-                        <button type="button" class="btn btn-primary" data-target="modal" data-toggle="modal">list-group-item</button>
+                      <li class="list-group-item btn btn-primary" data-target="modal" data-toggle="modal">
                       </li>
                 </div>
             </div>
           </div>
       </main>
+
       <footer class="container">
       </footer>
 
