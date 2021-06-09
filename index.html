@@ -16,35 +16,36 @@
   </head>
 
   <!-- Creating pokemonList class, associated buttons -->
-  <div class="pokemon">
-    <body>
-      <header class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-          <a class="navbar-brand" href="#">Pokemon Javascript App</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <a class="nav-link" href="https://jmontoyajr.github.io/portfolio-website/" target="_blank">Portfolio<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://jmontoyajr.github.io/simple-js-app/" target="_blank">Pokemon App</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="https://jmontoyajr.github.io/to-do-list-app/" target="_blank">To-do List</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">More</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+  <body>
+    <div class="pokemon">
+        <header class="container">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <a class="navbar-brand" href="#">Pokemon Javascript App</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="https://jmontoyajr.github.io/portfolio-website/" target="_blank">Portfolio<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://jmontoyajr.github.io/simple-js-app/" target="_blank">Pokemon App</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://jmontoyajr.github.io/to-do-list-app/" target="_blank">To-do List</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">More</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+      </div>
 
         <!-- Modal -->
-          <div class="modal fade" id="pokemon-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="pokemon-modal" tabindex="-1" role="dialog" aria-labelledby="pokemon-modal" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
 
@@ -70,15 +71,17 @@
           </div>
 
         <!-- Image and List of pokemon items -->
+      <main>
         <div class="container page-container">
           <img class="img-fluid" src="img/Charizard.png" width="145" alt="Charizard image">
             <div class="grid">
                 <div class="grid__item">
                   <img src="img/pokemon.png" width="200" alt="Pokemon Logo">
                   <h1 class="text-center">List</h1>
-                    <ul class="pokemon-list list-group list-unstyled"></ul>
+                    <ul class="pokemon-list list-group list-unstyled">
                       <li class="list-unstyled" data-target="modal" data-toggle="modal">
                       </li>
+                    </ul>
                 </div>
             </div>
           </div>
@@ -100,6 +103,5 @@
         <script src="js/promise-polyfill.js"></script>
         <script src="js/fetch-polyfill.js"></script>
         <script src="js/scripts.js"></script>
-      </body>
-    </div>
+  </body>
 </html>
