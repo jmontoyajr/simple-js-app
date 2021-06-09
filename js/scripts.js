@@ -29,16 +29,19 @@ let pokemonRepository = (function () {
     let pokemonList = document.querySelector
     (".pokemon-list");
 
+    /* Creates variable to display pokemon list items */
     let li = $("<li></li>");
     let inputValue = $("input").val();
     li.append(inputValue);
 
+    /* Creates list elements on the page, ties html content to modal */
     let listPokemon = document.createElement("li");
     let button = document.createElement("button");
     button.innerText = pokemon.name;
     $(button).addClass('btn btn-outline-danger btn-width group-list-item');
     $(button).attr({ 'data-toggle': 'modal', 'data-target': '#pokemon-modal' });
 
+    /* Creates pokemon buttons */
     listPokemon.appendChild(button);
     pokemonList.appendChild(listPokemon);
 
@@ -50,30 +53,32 @@ let pokemonRepository = (function () {
   /* Show modal called when clicked */
   function showModal(item) {
   loadDetails(item).then(function() {
+
       let modalTitle = $('.modal-title');
       let modalBody = $('.modal-body');
       let columnLeft = $('.col__left');
       let modalRow = $('.modal-row');
 
-      // $(modalTitle).empty();
-      // $(modalBody).empty();
-      // $(columnCenter).empty();
-      // $(modalRow).empty();
+      $(modalTitle).empty();
+      $(columnLeft).empty();
 
+      /* Create variables to display items in modal */
       let nameElement = $('<h1>' + item.name + '</h1>');
       let heightElement = $('<div>' + '<p>' + ' Height: ' + item.height + '</p>' + '</div>');
       let typeElement = $('<div>' + '<p>' + ' Type: ' + item.types + '</p>' + '</div>');
       let abilitiesElement = $('<div>' + '<p>' + 'Abilities: ' + item.abilities + '</p>' + '</div>');
 
+      /* Create variable to display image in modal */
       let imageElement = $('<img class="modal-image">');
-
       imageElement.attr('src', item.imageUrl);
       imageElement.attr('id', 'modal-image');
 
+      /* Add elements to modal */
       modalTitle.append(nameElement);
       columnLeft.append(heightElement, imageElement);
       modalRow.append(columnLeft);
       modalBody.append(modalRow);
+
     });
   }
 
