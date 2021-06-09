@@ -8,43 +8,6 @@ div {
   padding: 15px;
 }
 
-a {
-  color: black;
-}
-
-a:visited {
-  /* visited link */
-  color: orange;
-}
-
-a:hover,
-a:focus {
-  text-decoration: none; /* no underlining when hovering over a link */
-}
-
-a:active {
-  color: blue; /* selected link */
-}
-
-
-.button-class {
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  background-color: #FF2D00;
-  color: white;
-  border: 2px solid #FFF;
-}
-
-
 /* main section of homepage */
 .pokemon {
   max-width: 750px;
@@ -61,11 +24,11 @@ a:active {
 }
 
 .grid__item {
-  background-color: orange;
+  background-color: #FFA500;
 }
 
 .grid {
-  display: grid;
+  /* display: grid; */
   grid-template-columns: 300px 300px 300px;
   grid-template-rows: auto auto;
 }
@@ -81,38 +44,3 @@ a:active {
   margin-top: 70px;
 
 }
-
-/* grid-template-columns: 300px 300px 300px; fractions are better than pixels - they are responsive */
-
-@supports (display: grid) {
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 10px;
-    margin: 0;
-    padding: 20px;
-  }
-
-  /* Media queries */
-
-  @media all and (max-width: 500px) {
-    .grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  @media all and (min-width: 500px) and (max-width: 750px) {
-    .grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media all and (max-width: 750px) {
-    .grid {
-      grid-gap: 10px;
-    }
-
-    .grid__item:last-child {
-      grid-column: auto / auto;
-      grid-row: auto / auto;
-    }
