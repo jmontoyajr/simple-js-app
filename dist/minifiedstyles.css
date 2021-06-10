@@ -1,0 +1,1 @@
+body{font-family:Roboto,sans-serif;line-height:1.6}div{padding:15px}.pokemon{max-width:750px;margin:0 auto}.title{text-align:center}.grid{display:grid}.grid__item{background-color:orange}.grid{grid-template-columns:300px 300px 300px;grid-template-rows:auto auto}.grid__item{display:inline-block;width:100%;padding:20px}.page-container{margin-top:70px}
